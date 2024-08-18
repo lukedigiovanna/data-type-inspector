@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { views, View } from "./views";
+
+const App = () => {
+    const [currentView, setCurrentView] = React.useState<View>(views[0]);
+
+    return (
+        <div className="block mx-auto max-w-4xl">
+            <div className="p-4 ">
+                <h1 className="text-3xl font-bold">
+                    Data Type Viewer
+                </h1>
+            </div>
+            <div className="flex flex-row space-x-2 p-3 border-gray-300 border-b border-t">
+                {
+                    views.map((view: View, index: number) => 
+                        <button
+                            className={`
+                                border border-gray-400 bg-gray-100 rounded px-2 py-1 font-bold transition
+                                hover:bg-gray-300
+                                active:bg-blue-400
+                                ${view === currentView && "border-black bg-blue-300 hover:bg-blue-300"}`}
+                            key={index}
+                            onClick={() => {
+                                setCurrentView(view);
+                            }}
+                        >
+                            { view.title }
+                        </button>
+                    )
+                }
+            </div>
+            <div>
+                {
+                    currentView.element
+                }
+            </div>
+        </div>
+    );
 }
 
-export default App;
+export { App };
