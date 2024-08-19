@@ -93,11 +93,7 @@ const IntegerView = () => {
                                     }
                                 </div>
                                 <div className="mt-4">
-                                    <div className="relative">
-                                        <div className="w-1 h-2 bg-black absolute left-0 bottom-0" />
-                                        <div className="h-1 bg-black" />
-                                        <div className="w-1 h-2 bg-black absolute right-0 bottom-0" />
-                                    </div>
+                                    <SectionBar colorStyle="bg-black" /> 
                                     <p className="text-center">
                                         {
                                             start === 0 && "Rest of "
