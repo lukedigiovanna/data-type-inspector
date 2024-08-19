@@ -1,5 +1,6 @@
 import React from "react";
 import { Digit } from "../components/Digit";
+import { SectionBar } from "../components/SectionBar";
 import { Bit, UnsignedInteger } from "../types";
 import { clone, range } from "../utils";
 
@@ -7,6 +8,7 @@ const UnsignedIntegerView = () => {
     const [uint, setUint] = React.useState(new UnsignedInteger(16));
 
     const valueRef = React.useRef(null);
+    const [invalidValue, setInvalidValue] = React.useState(false);
 
     const update = () => {
         if (valueRef.current) {
@@ -25,35 +27,44 @@ const UnsignedIntegerView = () => {
     return (
         <div className="p-4">
             <div>
-                {/* <div>
-                    <h1 className="font-seven-segment text-5xl font-bold text-center py-0">
-                        { uint.value }
-                    </h1>
-                </div> */}
                 <div className="flex flex-row justify-center">
                     <input type="number" 
                            ref={valueRef} 
                            defaultValue={0} 
-                           className="font-seven-segment text-5xl font-bold text-center focus:outline-none no-spinner" 
+                           className={`
+                            font-seven-segment text-5xl font-bold 
+                            text-center 
+                            focus:outline-none no-spinner
+                            ${invalidValue && 'text-red-500'}`}
                            onChange={(e) => {
-                                if (e.target.value.length > 0) {
-                                    uint.value = Number.parseInt(e.target.value);
+                                try {
+                                    if (e.target.value.length > 0) {
+                                        uint.value = Number.parseInt(e.target.value);
+                                    }
+                                    else {
+                                        uint.value = 0;
+                                    }
+                                    update();
+                                    setInvalidValue(false);
                                 }
-                                else {
-                                    uint.value = 0;
+                                catch {
+                                    setInvalidValue(true);
                                 }
-                                update();
+                           }}
+                           onBlur={(e) => {
+                                e.target.value = uint.value.toString();
+                                setInvalidValue(false);
                            }}
                     />
                 </div>
                 <div className="flex flex-row space-x-6 justify-center select-none">
                     {
                         range(0, uint.size, 8).map(start =>
-                            <div>
+                            <div key={start}>
                                 <div className="flex flex-row space-x-1">
                                     {
                                         range(start, start + 8).map((index: number) => (
-                                            <div>
+                                            <div key={index}>
                                                 <p className="text-gray-500 text-center text-xs italic">
                                                     {index}
                                                 </p>
@@ -63,11 +74,7 @@ const UnsignedIntegerView = () => {
                                     }
                                 </div>
                                 <div className="mt-4">
-                                    <div className="relative">
-                                        <div className="w-1 h-2 bg-black absolute left-0 bottom-0" />
-                                        <div className="h-1 bg-black" />
-                                        <div className="w-1 h-2 bg-black absolute right-0 bottom-0" />
-                                    </div>
+                                    <SectionBar colorStyle="bg-black"/>
                                     <p className="text-center">
                                         Byte { start / 8 + 1}
                                     </p>

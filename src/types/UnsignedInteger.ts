@@ -1,5 +1,5 @@
 import { mod } from "../utils";
-import { Bit, Endianness } from "./index";
+import { Bit, Endianness } from ".";
 
 class UnsignedInteger {
     private _size: number;
@@ -22,17 +22,17 @@ class UnsignedInteger {
 
     set value(value: number) {
         if (!Number.isInteger(value)) {
-            throw new Error("Number must be a positive integer");
+            throw new Error("Number must be an integer");
         }
-
-        value = mod(value, Math.pow(2, this.size));
+        if (value < 0 || value >= Math.pow(2, this.size)) {
+            throw new Error("Value out of range for unsigned integer of size " + this.size);
+        }
 
         this._value = value;
         for (let place = 0; place < this._size; place++) {
             const digit = (value >> place) & 1;
             this.binary[this._size - 1 - place] = digit as Bit;
         }
-        console.log(this.binary);
     }
 
     get value() {
