@@ -52,7 +52,7 @@ class Float {
     }
 
     set value(value: number) {
-
+        
     }
 
     get value() {
