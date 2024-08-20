@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/data-type-inspector/static/css/main.eccac63d.css",
+    "main.js": "/data-type-inspector/static/js/main.6dd34dc8.js",
+    "static/media/Seven Segment.ttf": "/data-type-inspector/static/media/Seven Segment.3ee4f8118d9db6b61456.ttf",
+    "index.html": "/data-type-inspector/index.html",
+    "main.eccac63d.css.map": "/data-type-inspector/static/css/main.eccac63d.css.map",
+    "main.6dd34dc8.js.map": "/data-type-inspector/static/js/main.6dd34dc8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eccac63d.css",
+    "static/js/main.6dd34dc8.js"
+  ]
+}
