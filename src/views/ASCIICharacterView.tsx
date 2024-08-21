@@ -59,7 +59,7 @@ const ASCIICharacterView = () => {
                     <div>
                         <div>
                             <p className="text-gray-500 text-center text-xs italic">
-                                0
+                                7
                             </p>
                             <Digit value={character.getDigit(0)} onClick={() => {}} />
                         </div>
@@ -79,7 +79,7 @@ const ASCIICharacterView = () => {
                                 range(1, 8).map((index) => (
                                     <div key={index}>
                                         <p className="text-gray-500 text-center text-xs italic">
-                                            { index }
+                                            { 8 - 1 - index }
                                         </p>
                                         <Digit value={character.getDigit(index)} onClick={swapDigitFunction(index)} />
                                     </div>

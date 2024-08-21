@@ -65,7 +65,7 @@ const FloatView = () => {
                 <div className="flex flex-row space-x-6 justify-center select-none">
                     <div>
                         <p className="text-gray-500 text-center text-xs italic">
-                            {0}
+                            {float.size - 1}
                         </p>
                         <Digit value={float.getDigit(0)} onClick={swapDigitFunction(0)} />
                         <div className="mt-4">
@@ -84,7 +84,7 @@ const FloatView = () => {
                                 range(1, 1 + float.exponentLength).map((index) => (
                                     <div key={index}>
                                         <p className="text-gray-500 text-center text-xs italic">
-                                            { index }
+                                            { float.size - 1 - index }
                                         </p>
                                         <Digit value={float.getDigit(index)} onClick={swapDigitFunction(index)} />
                                     </div>
@@ -116,7 +116,7 @@ const FloatView = () => {
                                 range(1 + float.exponentLength, 1 + float.exponentLength + float.mantissaLength).map((index) => (
                                     <div key={index}>
                                         <p className="text-gray-500 text-center text-xs italic">
-                                            { index }
+                                            { float.size - 1 - index }
                                         </p>
                                         <Digit value={float.getDigit(index)} onClick={swapDigitFunction(index)} />
                                     </div>

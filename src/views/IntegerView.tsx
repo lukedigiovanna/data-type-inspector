@@ -66,7 +66,7 @@ const IntegerView = () => {
                     <div>
                         <div>
                             <p className="text-gray-500 text-center text-xs italic">
-                                {0}
+                                {int.size - 1}
                             </p>
                             <Digit value={int.getDigit(0)} onClick={swapDigitFunction(0)} />
                             <div className="mt-4">
@@ -85,7 +85,7 @@ const IntegerView = () => {
                                         range(start === 0 ? 1 : start, start + 8).map((index: number) => (
                                             <div key={index}>
                                                 <p className="text-gray-500 text-center text-xs italic">
-                                                    {index}
+                                                    {int.size - 1 - index}
                                                 </p>
                                                 <Digit value={int.getDigit(index)} key={index} onClick={swapDigitFunction(index)}/>
                                             </div>

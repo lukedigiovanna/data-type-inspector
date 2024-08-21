@@ -66,7 +66,7 @@ const UnsignedIntegerView = () => {
                                         range(start, start + 8).map((index: number) => (
                                             <div key={index}>
                                                 <p className="text-gray-500 text-center text-xs italic">
-                                                    {index}
+                                                    {uint.size - 1 - index}
                                                 </p>
                                                 <Digit value={uint.getDigit(index)} key={index} onClick={swapDigitFunction(index)}/>
                                             </div>
