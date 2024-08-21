@@ -169,6 +169,15 @@ class ASCIICharacter {
         }
     }
 
+    public setValueByKey(value: string) {
+        for (let i = 32; i < ASCII_TABLE.length; i++) {
+            if (ASCII_TABLE[i].title === value) {
+                this.value = i;
+                return;
+            }
+        }
+    }
+
     recomputeValue() {
         this._value = 0;
         let place = 1;

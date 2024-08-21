@@ -36,8 +36,18 @@ const ASCIICharacterView = () => {
                                 focus:outline-none no-spinner}
                             `}
                            onKeyDown={(e) => {
-                                console.log(e);
-                                character.value = e.keyCode;
+                                if (e.code.startsWith("Arrow")) {
+                                    return;
+                                }
+                                if (e.keyCode < 32 || e.keyCode === 127) {
+                                    character.value = e.keyCode;
+                                }
+                                else {
+                                    character.setValueByKey(e.key);
+                                }
+                                update();
+                           }}
+                           onChange={() => {
                                 update();
                            }}
                     />
