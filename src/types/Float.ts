@@ -20,15 +20,15 @@ class Float {
 
     constructor(size: number) {
         this._size = size;
-        if (this.size === 32) {
+        if (size === 32) {
             this._exponentLength = 8;
             this._mantissaLength = 23;
         }
-        if (this.size === 16) {
+        else if (size === 16) {
             this._exponentLength = 5;
             this._mantissaLength = 10;
         }
-        else if (this.size === 8) {
+        else if (size === 8) {
             this._exponentLength = 4;
             this._mantissaLength = 3;
         }
@@ -52,7 +52,7 @@ class Float {
     }
 
     set value(value: number) {
-        
+
     }
 
     get value() {

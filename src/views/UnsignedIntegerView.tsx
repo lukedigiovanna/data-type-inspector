@@ -121,11 +121,11 @@ const UnsignedIntegerView = () => {
                     The unsigned integer is arguably one of the simplest numeric
                     types in computing. If you have an understanding of the
                     binary number system, you already know how unsigned integers
-                    are represented in the computer. Read about binary <a href="https://www.mathsisfun.com/binary-number-system.html" target="_blank" className="text-blue-500 hover:text-blue-600 visited:text-purple-500 visited:hover:text-purple-600">
+                    are represented in the computer. Read about binary <a href="https://www.mathsisfun.com/binary-number-system.html" target="_blank" className="link" rel="noreferrer">
                     here
                     </a> if you are unfamiliar.
                 </p>
-                <h2 className="text-lg font-bold mt-2 mb-1">
+                {/* <h2 className="text-lg font-bold mt-2 mb-1">
                     Endian-ness
                 </h2>
                 <p className="text-gray-800">
@@ -143,7 +143,7 @@ const UnsignedIntegerView = () => {
                     bytes come first. This is how most modern processors represent
                     multi-byte integers due to the increased efficiency that can
                     be exploited from this format.
-                </p>
+                </p> */}
             </div>
         </div>
     )

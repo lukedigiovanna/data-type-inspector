@@ -1,6 +1,6 @@
 import { UnsignedIntegerView } from "./UnsignedIntegerView";
 import { IntegerView } from "./IntegerView";
-import { CharacterView } from "./CharacterView";
+import { ASCIICharacterView } from "./ASCIICharacterView";
 import { FloatView } from "./FloatView";
 
 interface View {
@@ -22,8 +22,8 @@ const views: View[] = [
         element: <FloatView />
     },
     {
-        title: "Character",
-        element: <CharacterView />
+        title: "ASCII",
+        element: <ASCIICharacterView />
     },
 ];
 

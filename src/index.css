@@ -33,3 +33,7 @@
 .no-spinner {
     @apply [appearance:textfield];
 }
+
+.link {
+    @apply text-blue-500 hover:text-blue-600 visited:text-purple-500 visited:hover:text-purple-600;
+}

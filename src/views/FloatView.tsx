@@ -163,6 +163,21 @@ const FloatView = () => {
                 <p className="text-gray-800">
                     The floating point number is the most complex primitive number to 
                     represent in a computer, but it is also the most flexible.
+                    Floats are most commonly represented using the 
+                    <a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" className="link" rel="noreferrer"> IEEE 754 standard</a>,
+                    and works as follows:
+                    The most significant bit is used as the sign bit, much the 
+                    same as in a signed integer. Then we utilize the "exponent"
+                    and the "mantissa". The exponent bits determine the scale or 
+                    magnitude of the number, allowing it to represent very large 
+                    or very small values. The exponent is stored in a biased form, 
+                    which means that a fixed number (called the bias) is subtracted 
+                    from the stored exponent to get the actual exponent. The mantissa 
+                    (also known as the significand or coefficient) represents the 
+                    precision bits of the number. In normalized form, the mantissa
+                    is usually assumed to have an implicit leading bit (1) before 
+                    the binary point, which is not stored explicitly but is understood 
+                    to be there. In subnormal form, the implicit leading bit is a 0. 
                 </p>
             </div>
         </div>

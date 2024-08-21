@@ -156,8 +156,13 @@ const IntegerView = () => {
                     Why not just compute the value of the bits directly and use
                     the sign bit simply as a toggle for negative or positive
                     (this is known as sign-magnitude representation)?
-                    The reason is because this is how arithmetic logic
-                    units in most processors can
+                    The reason is because in twos-complement representation, 
+                    adding and subtracting numbers, whether positive or negative, 
+                    follows the same basic rules as for unsigned integers, 
+                    simplifying the design of the arithmetic logic unit (ALU). 
+                    The result is that no special handling is required for 
+                    different sign bits, allowing for more efficient and 
+                    consistent operations.
                 </p>
             </div>
         </div>

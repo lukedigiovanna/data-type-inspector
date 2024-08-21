@@ -9,7 +9,7 @@ const App = () => {
         <div className="block mx-auto max-w-4xl">
             <div className="p-4 ">
                 <h1 className="text-3xl font-bold">
-                    Data Type Viewer
+                    Data Type Inspector
                 </h1>
             </div>
             <div className="flex flex-row space-x-2 p-3 border-gray-300 border-b border-t">
