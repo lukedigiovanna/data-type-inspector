@@ -1,4 +1,3 @@
-import { mod } from "../utils";
 import { Bit, Endianness } from ".";
 
 class UnsignedInteger {

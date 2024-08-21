@@ -1,9 +1,32 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { views, View } from "./views";
 
 const App = () => {
+    const location = useLocation();    
+    const navigate = useNavigate();
+
+    const goto = (id: string) => { navigate(`#${id}`)};
+
     const [currentView, setCurrentView] = React.useState<View>(views[0]);
+
+    React.useEffect(() => {
+        const id = location.hash;
+    
+        if (id.length === 0) {
+            goto(views[0].id);
+        }
+        else {
+            for (const view of views) {
+                if (view.id === id.substring(1)) {
+                    setCurrentView(view);
+                    return;
+                }
+            }
+            goto(views[0].id);
+        }
+    }, [location]);
 
     return (
         <div className="block mx-auto max-w-4xl">
@@ -16,14 +39,15 @@ const App = () => {
                 {
                     views.map((view: View, index: number) => 
                         <button
+                            disabled={view.id === currentView.id}
                             className={`
                                 border border-gray-400 bg-gray-100 rounded px-2 py-1 font-bold transition
                                 hover:bg-gray-300
                                 active:bg-blue-400
-                                ${view === currentView && "border-black bg-blue-300 hover:bg-blue-300"}`}
+                                disabled:border-black disabled:bg-blue-300 disabled:bg-blue-300"}`}
                             key={index}
                             onClick={() => {
-                                setCurrentView(view);
+                                goto(view.id);
                             }}
                         >
                             { view.title }
