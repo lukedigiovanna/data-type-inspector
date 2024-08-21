@@ -177,7 +177,9 @@ const FloatView = () => {
                     precision bits of the number. In normalized form, the mantissa
                     is usually assumed to have an implicit leading bit (1) before 
                     the binary point, which is not stored explicitly but is understood 
-                    to be there. In subnormal form, the implicit leading bit is a 0. 
+                    to be there. In subnormal form, the implicit leading bit is a 0.
+                    The value is then computed as the sign times 2<sup>exponent</sup>
+                    times the mantissa.
                 </p>
             </div>
         </div>

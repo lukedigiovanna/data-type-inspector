@@ -141,11 +141,11 @@ const IntegerView = () => {
                     but now we support negative numbers. To do this we use a 
                     technique called twos-complement. This is a bit more
                     complicated than unsigned integers, but is still relatively
-                    straightforward. First we dedicate the left-most bit in the
-                    most significant byte to be the "sign-bit". When the sign-bit 
+                    straightforward. First we dedicate the most significant bit (MSB)
+                    to be the "sign-bit". When the sign-bit 
                     is 0, we compute the value as if the rest of the bits
                     represent an unsigned integer. When the sign-bit is 1, we 
-                    take the twos-complement. The value is computed
+                    take the twos-complement. This works
                     by taking the complement (or opposite) of every other bit,
                     computing the binary value, and then adding 1. 
                     Finally we treat this value as "negative".
@@ -156,7 +156,7 @@ const IntegerView = () => {
                     Why not just compute the value of the bits directly and use
                     the sign bit simply as a toggle for negative or positive
                     (this is known as sign-magnitude representation)?
-                    The reason is because in twos-complement representation, 
+                    The reason is in twos-complement representation, 
                     adding and subtracting numbers, whether positive or negative, 
                     follows the same basic rules as for unsigned integers, 
                     simplifying the design of the arithmetic logic unit (ALU). 
