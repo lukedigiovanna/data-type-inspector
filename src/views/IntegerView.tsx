@@ -70,7 +70,7 @@ const IntegerView = () => {
                             </p>
                             <Digit value={int.getDigit(0)} onClick={swapDigitFunction(0)} />
                             <div className="mt-4">
-                                <SectionBar colorStyle="bg-gray-800" />
+                                <SectionBar colorStyle="bg-orange-300" />
                                 <p className="text-center">
                                     Sign
                                 </p>
